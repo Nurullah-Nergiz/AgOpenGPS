@@ -131,6 +131,31 @@ namespace AgDiag
             }
         }
 
+        //AutoSteerData2
+        public class CPGN_F9
+        {
+            /// <summary>
+            /// 
+            /// PGN - 249 - F9 
+            /// XTE
+            /// </summary>
+            public byte[] pgn = new byte[] { 0x80, 0x81, 0x7f, 0xFB, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0xCC };
+            public int xteLo = 5;
+            public int xteHi = 6;
+            //public int  = 7;
+            //public int  = 8;
+            //public int  = 9;
+            //public int  = 10;
+            //public int  = 11;
+            //public int  = 12;
+
+            public CPGN_F9()
+            {
+                pgn[xteLo] = 0;
+                pgn[xteHi] = 0;
+            }
+        }
+
         //Machine Data
         public class CPGN_EF
         {
@@ -209,6 +234,11 @@ namespace AgDiag
         /// autoSteerConfig PGN - 251 - FB
         /// </summary>
         public CPGN_FB asConfig = new CPGN_FB();
+
+        /// <summary>
+        /// autoSteerConfig PGN - 249 - F9
+        /// </summary>
+        public CPGN_F9 asData2 = new CPGN_F9();
 
 
         /// <summary>

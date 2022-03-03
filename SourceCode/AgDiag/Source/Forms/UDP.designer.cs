@@ -235,6 +235,15 @@ namespace AgDiag
 
                             break;
                         }
+                    case 249:
+                        {
+                            for (int i = 5; i < data.Length; i++)
+                            {
+                                asData2.pgn[i] = data[i];
+                            }
+
+                            break;
+                        }
 
                     default:
                         {

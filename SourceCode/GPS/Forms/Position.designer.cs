@@ -679,6 +679,9 @@ namespace AgOpenGPS
                 //mc.autoSteerData[7] = unchecked((byte)(guidanceLineDistanceOff >> 8));
                 //mc.autoSteerData[8] = unchecked((byte)(guidanceLineDistanceOff));
 
+                p_249.pgn[p_249.xteHi] = unchecked((byte)(guidanceLineDistanceOff >> 8));
+                p_249.pgn[p_249.xteLo] = unchecked((byte)(guidanceLineDistanceOff));
+
                 //convert to cm from mm and divide by 2 - lightbar
                 int distanceX2;
                 if (guidanceLineDistanceOff == 32020 || guidanceLineDistanceOff == 32000)
@@ -745,6 +748,9 @@ namespace AgOpenGPS
 
             //out serial to autosteer module  //indivdual classes load the distance and heading deltas 
             SendPgnToLoop(p_254.pgn);
+
+            // AutosteerData2
+            SendPgnToLoop(p_249.pgn);
 
             //for average cross track error
             if (guidanceLineDistanceOff < 29000)

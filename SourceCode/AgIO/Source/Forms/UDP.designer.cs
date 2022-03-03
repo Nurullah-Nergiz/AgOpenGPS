@@ -233,6 +233,13 @@ namespace AgIO
                                 SendModule2Port(data, data.Length);
                                 break;
                             }
+                        case 0xF9: //249 AutoSteer Data 2
+                            {
+                                //serList.AddRange(data);
+                                SendModule1Port(data, data.Length);
+                                SendModule2Port(data, data.Length);
+                                break;
+                            }
                         case 0xFC: //252 steer settings
                             {
                                 SendModule1Port(data, data.Length);
